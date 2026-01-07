@@ -1,0 +1,38 @@
+abstract class Vehicle {
+    abstract double calculateMileage();
+
+    void startEngine() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car extends Vehicle {
+    double distance = 500;
+    double fuel = 25;
+
+    double calculateMileage() {
+        return distance / fuel;
+    }
+}
+
+class Bike extends Vehicle {
+    double distance = 300;
+    double fuel = 10;
+
+    double calculateMileage() {
+        return distance / fuel;
+    }
+}
+
+public class VehicleDemo {
+    public static void main(String[] args) {
+
+        Vehicle car = new Car();
+        car.startEngine();
+        System.out.println("Car Mileage: " + car.calculateMileage());
+
+        Vehicle bike = new Bike();
+        bike.startEngine();
+        System.out.println("Bike Mileage: " + bike.calculateMileage());
+    }
+}
